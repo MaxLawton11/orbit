@@ -111,17 +111,13 @@ ship5 = Body(8, 100, -200, -1, -4)
 
 planet = StaticBody(1e14, 0, 10)
 
-
 while True:
-
     for body in Body.body_list :
         body.addMomentaryVectors(gravity(body, planet).toVector2D(body.mass))
         body.update()
 
     for body in Body.body_list :
         body.render()
-
-    #planet.position = Position2D()
 
     planet.render()
     turtle.update()
